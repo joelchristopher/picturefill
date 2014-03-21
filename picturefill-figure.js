@@ -1,4 +1,4 @@
-/* Figurefill - An adaptation of Picturefill that uses alternative markup and grabs default alt value from noscript img. Author: Joel Swan, Core Creative, 2014 */
+/* Picturefill-figure - An adaptation of Picturefill that uses figure & figcaption tags and populates the img alt value with the default defined within noscript. Author: Joel Swan, Core Creative, 2014 */
 
 /*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with figure elements). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
 
