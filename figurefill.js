@@ -1,3 +1,5 @@
+/* Figurefill - An adaptation of Picturefill that uses alternative markup and grabs default alt value from noscript img. Author: Joel Swan, Core Creative, 2014 */
+
 /*! Picturefill - Responsive Images that work today. (and mimic the proposed Picture element with figure elements). Author: Scott Jehl, Filament Group, 2012 | License: MIT/GPLv2 */
 
 (function( w ){
@@ -27,15 +29,15 @@
 			// Find any existing img element in the picture element
 			var picImg = ps[ i ].getElementsByTagName( "img" )[ 0 ];
 
-            // Save default alt attribute so we don't have to define it again
-            var noscriptDefault = ps[ i ].getElementsByTagName( "noscript" )[0].innerText;
-            var picDefaultAlt = noscriptDefault.match(/<img.*?alt="(.*?)"/)[1];
+            // Save default img alt attribute
+            var noscriptSrc = ps[ i ].getElementsByTagName( "noscript" )[0].innerText;
+            var picDefaultAlt = noscriptSrc.match(/<img.*?alt="(.*?)"/)[1];
 
 			if( matches.length ){
 				var matchedEl = matches.pop();
 				if( !picImg || picImg.parentNode.nodeName === "NOSCRIPT" ){
 					picImg = w.document.createElement( "img" );
-					picImg.alt = picDefaultAlt;  /* Deprecating ps[ i ].getAttribute( "data-alt" ); */
+					picImg.alt = picDefaultAlt;
 
 				}
 				else if( matchedEl === picImg.parentNode ){
