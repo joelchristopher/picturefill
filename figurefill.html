@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Picturefill</title>
+		<script src="external/matchmedia.js"></script>
+		<script src="figurefill.js"></script>
+		<style>
+			body { font-family: sans-serif }
+			img {  max-width: 100% }
+            figure {
+                display: inline;
+                padding: 0;
+                margin: 0;
+                -webkit-margin-before: 0;
+                -webkit-margin-after: 0;
+                -webkit-margin-start: 0;
+                -webkit-margin-end: 0;
+            }
+            figcaption {
+                display: block;
+            }
+		</style>
+	</head>
+	<body>
+		
+		<h1>Figurefill: An adaption of Picturefill using the &lt;figure&gt; tag.</h1>
+				
+		<p>For more info on Picturefill: <a href="http://github.com/scottjehl/picturefill">see project home.</a></p>
+
+        <figure class="picture" data-picture>
+			<span class="sz-sm" data-src="external/imgs/small.jpg"></span>
+			<span class="sz-md" data-src="external/imgs/medium.jpg" data-media="(min-width: 400px)"></span>
+			<span class="sz-lg" data-src="external/imgs/large.jpg" data-media="(min-width: 800px)"></span>
+			<span class="sz-xl" data-src="external/imgs/extralarge.jpg" data-media="(min-width: 1000px)"></span>
+			<!-- Fallback content; same img as the initial, unqualified source element. -->
+			<noscript><span class="sz-sm"><img src="external/imgs/small.jpg" alt="Default alt data" /></span></noscript>
+            <figcaption>Optional figure caption element here</figcaption>
+		</figure>
+
+	</body>
+</html>
