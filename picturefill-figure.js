@@ -31,7 +31,12 @@
 
             // Save default img alt attribute
             var noscriptSrc = ps[ i ].getElementsByTagName( "noscript" )[0].innerText;
-            var picDefaultAlt = noscriptSrc.match(/<img.*?alt="(.*?)"/)[1];
+            // Firefox not finding noscript src
+            if (noscriptSrc) {
+                var picDefaultAlt = noscriptSrc.match(/<img.*?alt="(.*?)"/)[1];
+            } else {
+                var picDefaultAlt = ' ';
+            }
 
 			if( matches.length ){
 				var matchedEl = matches.pop();
